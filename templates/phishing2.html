@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Training Page</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='phishing2.css') }}">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3 video-list">
+                <h3 class="text-center">Video List</h3>
+                <ul class="list-unstyled">
+                    <li class="media" onclick="loadVideo('{{ url_for('static', filename='video1.mp4') }}', 'Phishing Attack')">
+                        <img src="{{ url_for('static', filename='tm1.png') }}" class="mr-3" alt="Video 1">
+                        <div class="media-body text-center">
+                            <h5>Phishing Attack</h5>
+                        </div>
+                    </li>
+                    <li class="media" onclick="loadVideo('{{ url_for('static', filename='video2.mp4') }}', 'Phishing: A Game of Deception?')">
+                        <img src="{{ url_for('static', filename='tm2.jpeg') }}" class="mr-3" alt="Video 2">
+                        <div class="media-body text-center">
+                            <h5>Phishing: A Game of Deception</h5>
+                        </div>
+                    </li>
+                    <li class="media" onclick="loadVideo('{{ url_for('static', filename='video3.mp4') }}', 'Spot Phishing Emails')">
+                        <img src="{{ url_for('static', filename='tm3.jpeg') }}" class="mr-3" alt="Video 3">
+                        <div class="media-body text-center">
+                            <h5>Spot Phishing Emails</h5>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-9 video-player">
+                <h3 id="videoTitle" class="text-center">Click a video to play</h3>
+                <video id="videoPlayer" class="w-100" controls disablepictureinpicture controlsList="nodownload">
+                    <source src="" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div id="questionOverlay" class="overlay">
+                    <div class="question" id="questionText"></div>
+                    <div id="mcqOptions"></div>
+                    <div class="controls">
+                        <button class="btn btn-primary" onclick="submitAnswer()">Submit Answer</button>
+                        <button id="goToResultsButton" class="btn btn-secondary" onclick="goToResults()">Go to Results</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies (jQuery, Popper.js) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="{{ url_for('static', filename='phishing2.js') }}"></script>
+</body>
+</html>

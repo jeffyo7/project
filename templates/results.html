@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Results</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='results.css') }}">
+</head>
+<body>
+    <div id="passTemplate" class="certificate-container hidden">
+        <h1>Certificate of Achievement</h1>
+        <h2 id="passResultText">Congratulations!</h2>
+        <p id="passScoreText">You have passed the quiz.</p>
+        <p>You have completed the phishing test and can now spot phishing attempts. Stay safe online! Remember to use anti-phishing extensions when browsing the internet and always verify details before entering any data.</p>
+        <p id="userName">Pujan Butani</p>
+    </div>
+    <div id="failTemplate" class="fail-container hidden">
+        <h1>Quiz Result</h1>
+        <h2 id="failResultText">Sorry!</h2>
+        <p id="failScoreText">You did not pass the quiz.</p>
+        <button id="retakeQuizButton" class="btn btn-primary">Retake Quiz</button>
+    </div>
+
+    <!-- Bootstrap JS and dependencies (jQuery, Popper.js) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="{{ url_for('static', filename='results.js') }}"></script>
+</body>
+</html>
